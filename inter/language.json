@@ -73,5 +73,35 @@
     "priv": "Politica sulla riservatezza",
     "imprint": "Note legali",
     "lang": "it"
+  },
+  "nl": {
+    "help": "FAQ",
+    "clogin": "Klantenlogin",
+    "login": "Login",
+    "email": "E-mailadres",
+    "password": "Wachtwoord",
+    "forgot": "Wachtwoord vergeten?",
+    "stay": "Aangemeld blijven",
+    "sign": "Aanmelden",
+    "strato": "STRATO.nl",
+    "terms": "Algemene voorwaarden",
+    "priv": "Privacybeleid",
+    "imprint": "Impressum",
+    "lang": "nl"
+  },
+  "se": {
+    "help": "Hjälp och kontakt",
+    "clogin": "Kundinloggning",
+    "login": "Login",
+    "email": "E-postadress",
+    "password": "Lösenord",
+    "forgot": "Glömt ditt lösenord?",
+    "stay": "Förbli inloggad",
+    "sign": "Logga in",
+    "strato": "STRATO.se",
+    "terms": "Allmänna villkor",
+    "priv": "Integritetspolicy",
+    "imprint": "Imprint",
+    "lang": "se"
   }
 }

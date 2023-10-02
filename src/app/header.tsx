@@ -11,6 +11,8 @@ const langOptions = [
   { es: "Español" },
   { it: "Italiano" },
   { fr: "Français" },
+  { nl: "Nederlands" },
+  { se: "Svenska" },
 ];
 
 interface Props {
@@ -21,9 +23,9 @@ interface Props {
 export default function Header({ lang, setLangChange }: Props) {
   const langChange = (e: any) => {
     window &&
-      localStorage.setItem(
+      sessionStorage.setItem(
         "lang",
-        e.target.value == "us" ? "en" : e.target.value
+        e.target.value == "us" ? i18n.defaultLocale : e.target.value
       );
     setLangChange(e.target.value);
   };
@@ -76,7 +78,6 @@ export default function Header({ lang, setLangChange }: Props) {
             {langOptions.map((item, index) => {
               const val = Object.keys(item)[0];
               const text = Object.values(item)[0];
-              console.log(val);
 
               return val == lang.lang ? (
                 <option
