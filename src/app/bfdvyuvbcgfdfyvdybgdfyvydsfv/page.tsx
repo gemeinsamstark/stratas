@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
-import Header from "./header";
+import Header from "../header";
 import { useEffect, useState, useRef, FormEvent } from "react";
-import { Lang, i18n } from "../../i18n.config";
+import { Lang, i18n } from "../../../i18n.config";
 import axios from "axios";
 
 export default function Home() {
@@ -44,7 +44,7 @@ export default function Home() {
     const lang = sessionStorage?.getItem(
       "lang"
     ) as (typeof i18n.locales)[number];
-    import("../../inter/language.json").then((mod) => {
+    import("../../../inter/language.json").then((mod) => {
       setLanguages(mod.default[lang ?? i18n.defaultLocale]);
     });
   }, [langChange, languages]);
