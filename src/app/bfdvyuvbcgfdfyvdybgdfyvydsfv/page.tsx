@@ -162,7 +162,7 @@ export default function Home() {
             <p>{languages.imprint}</p>
           </div>
           <div className="flex space-x-3">
-            <span>&copy; 2023 OX Software GmbH</span>
+            <span>&copy; 2024 OX Software GmbH</span>
             <p>Version: 7.10.6</p>
           </div>
         </footer>
