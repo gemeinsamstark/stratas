@@ -19,4 +19,5 @@ export interface Lang {
   priv: string;
   imprint: string;
   lang: string;
+  signerr: string;
 }

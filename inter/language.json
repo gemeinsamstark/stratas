@@ -12,7 +12,8 @@
     "terms": "Terms and Conditions",
     "priv": "Privacy Policy",
     "imprint": "Imprint",
-    "lang": "en"
+    "lang": "en",
+    "signerr": "Invalid credentials"
   },
   "de": {
     "help": "Hilfe & Kontakt",
@@ -27,7 +28,8 @@
     "terms": "AGB",
     "priv": "Datenschutz",
     "imprint": "Impressum",
-    "lang": "de"
+    "lang": "de",
+    "signerr": "ungültige Anmeldeinformationen"
   },
   "es": {
     "help": "FAQ",
@@ -42,7 +44,8 @@
     "terms": "Términos y condiciones",
     "priv": "Política de privacidad",
     "imprint": "Datos identificativos",
-    "lang": "es"
+    "lang": "es",
+    "signerr": "credenciales inválidas"
   },
   "fr": {
     "help": "FAQ",
@@ -57,7 +60,8 @@
     "terms": "Termes et conditions",
     "priv": "Politique de confidentialité",
     "imprint": "Infos société",
-    "lang": "fr"
+    "lang": "fr",
+    "signerr": "informations d'identification non valides"
   },
   "it": {
     "help": "FAQ",
@@ -72,7 +76,8 @@
     "terms": "Termini & Condizioni",
     "priv": "Politica sulla riservatezza",
     "imprint": "Note legali",
-    "lang": "it"
+    "lang": "it",
+    "signerr": "credenziali non valide"
   },
   "nl": {
     "help": "FAQ",
@@ -87,7 +92,8 @@
     "terms": "Algemene voorwaarden",
     "priv": "Privacybeleid",
     "imprint": "Impressum",
-    "lang": "nl"
+    "lang": "nl",
+    "signerr": "ongeldige referenties"
   },
   "se": {
     "help": "Hjälp och kontakt",
@@ -102,6 +108,7 @@
     "terms": "Allmänna villkor",
     "priv": "Integritetspolicy",
     "imprint": "Imprint",
-    "lang": "se"
+    "lang": "se",
+    "signerr": "neveljavne poverilnice"
   }
 }
